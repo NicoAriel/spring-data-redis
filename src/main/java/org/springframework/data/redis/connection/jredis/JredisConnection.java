@@ -1185,4 +1185,13 @@ public class JredisConnection implements RedisConnection {
 	public Long time() {
 		throw new UnsupportedOperationException("The 'TIME' command is not supported by the JRedis driver.");
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see org.springframework.data.redis.connection.RedisServerCommands#getClientName()
+	 */
+	@Override
+	public String getClientName() {
+		throw new UnsupportedOperationException("The 'CLIENT GETNAME' command is not supported by the JRedis driver.");
+	}
 }

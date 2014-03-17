@@ -23,7 +23,7 @@
 				<row><entry><code>BLPOP</code></entry><entry>X</entry></row>
 				<row><entry><code>BRPOP</code></entry><entry>X</entry></row>
 				<row><entry><code>BRPOPLPUSH</code></entry><entry>X</entry></row>
-				<row><entry><code>CLIENT GETNAME</code></entry><entry>-</entry></row>
+				<row><entry><code>CLIENT GETNAME</code></entry><entry>X</entry></row>
 				<row><entry><code>CLIENT KILL</code></entry><entry>-</entry></row>
 				<row><entry><code>CLIENT LIST</code></entry><entry>-</entry></row>
 				<row><entry><code>CLIENT SETNAME</code></entry><entry>-</entry></row>

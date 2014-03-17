@@ -90,6 +90,16 @@ public class JedisConnectionUnitTestSuite {
 			assertThat(captor.getValue(), equalTo("return redis.call('SHUTDOWN','SAVE')".getBytes()));
 		}
 
+		/**
+		 * @see DATAREDIS-270
+		 */
+		@Test
+		public void getClientNameShouldSendRequestCorrectly() {
+
+			connection.getClientName();
+			verifyNativeConnectionInvocation().clientGetname();
+		}
+
 	}
 
 	public static class JedisConnectionPipelineUnitTests extends JedisConnectionUnitTests {
@@ -116,6 +126,15 @@ public class JedisConnectionUnitTestSuite {
 		@Test(expected = UnsupportedOperationException.class)
 		public void shutdownSaveShouldBeSentCorrectlyUsingLuaScript() {
 			super.shutdownSaveShouldBeSentCorrectlyUsingLuaScript();
+		}
+
+		/**
+		 * @see DATAREDIS-270
+		 */
+		@Override
+		@Test(expected = UnsupportedOperationException.class)
+		public void getClientNameShouldSendRequestCorrectly() {
+			super.getClientNameShouldSendRequestCorrectly();
 		}
 
 	}

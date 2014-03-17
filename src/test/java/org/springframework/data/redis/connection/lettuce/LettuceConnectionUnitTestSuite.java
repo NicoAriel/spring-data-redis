@@ -82,6 +82,16 @@ public class LettuceConnectionUnitTestSuite {
 			verifyNativeConnectionInvocation().shutdown(true);
 		}
 
+		/**
+		 * @see DATAREDIS-270
+		 */
+		@Test
+		public void getClientNameShouldSendRequestCorrectly() {
+
+			connection.getClientName();
+			verifyNativeConnectionInvocation().clientGetname();
+		}
+
 	}
 
 	public static class LettucePipelineConnectionUnitTests extends LettuceConnectionUnitTests {
